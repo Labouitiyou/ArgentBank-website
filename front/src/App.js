@@ -3,6 +3,8 @@ import "./App.css";
 import Footer from "./Components/footer/Footer";
 import Header from "./Components/header/Header";
 import Home from "./Pages/home/Home";
+import SignIn from "./Pages/singin/SignIn";
+import User from "./Pages/user/User";
 
 function App() {
   return (
