@@ -1,12 +1,12 @@
 import "../home/Home.css"
-import Header from "../../Components/header/Header";
-import Footer from "../../Components/footer/Footer";
+import Hero from "../../Components/hero/Hero";
+import Features from "../../Components/features/Features";
 
 const Home = () => {
     return (
         <div className="homeWrapper">
-            <Header/>
-            <Footer/>
+            <Hero />
+            <Features />
         </div>
     );
   };
