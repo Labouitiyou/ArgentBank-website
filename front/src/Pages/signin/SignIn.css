@@ -1,0 +1,11 @@
+.bgform {
+  width: 100%;
+  padding-top: 45px;
+  padding-bottom: 90px;
+  background-color: #12002b;
+}
+@media screen and (max-width: 768px) {
+  .bgform {
+    padding-bottom: 110px;
+  }
+}

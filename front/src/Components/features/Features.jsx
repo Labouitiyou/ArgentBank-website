@@ -4,13 +4,13 @@ import FeatureItem from "../featureItem/FeatureItem";
 
 const Features = () => {
     return (
-     <div class="features">
+     <div className="features">
         {FeaturesList.map((feature) => (
         <FeatureItem
           key={feature.id}
           title={feature.title}
           text={feature.text}
-          imageSrc={feature.imageSrc}
+          image={feature.image}
         />
       ))}
      </div>

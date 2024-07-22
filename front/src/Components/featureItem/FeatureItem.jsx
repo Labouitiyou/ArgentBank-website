@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import "../featureItem/FeatureItem.css"
 
-const FeatureItem = ({ title, text, imageSrc }) => {
+const FeatureItem = ({ title, text, image }) => {
   return (
     <div className='feature-item'>
-      <img src={imageSrc} alt="Icon" />
+      <img src={image} alt="Icon" />
       <h3>{title}</h3>
       <p>{text}</p>
     </div>
@@ -12,9 +12,9 @@ const FeatureItem = ({ title, text, imageSrc }) => {
 }
 
 FeatureItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  imageSrc: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  image: PropTypes.string,
 }
 
 export default FeatureItem;
