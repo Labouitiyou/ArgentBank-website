@@ -2,7 +2,7 @@ import "../user/User.css"
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Account from '../../Components/account/Account'
-import EditName from "../../Components/editName/EditName"
+//import EditName from "../../Components/editName/EditName"
 import { useDispatch, useSelector } from 'react-redux'
 import { setUser } from '../../redux/slice'
 
@@ -82,7 +82,7 @@ const User = () => {
     
     return (
         <main className='bgDark'>
-      <EditName />
+      {/*<EditName />*/}
       {accountItems.map((accountItem, index) => (
         <Account key={index} accountItem={accountItem} />
       ))}

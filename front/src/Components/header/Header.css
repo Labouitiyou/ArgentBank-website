@@ -1,49 +1,110 @@
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-}
-
-.headerWrapper {
-  width: 100%;
-  padding: 5px;
-  padding-left: 20px;
+nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 20px;
 }
-.headerWrapper img {
-  width: 45%;
+@media screen and (max-width: 768px) {
+  nav {
+    padding-top: 1rem;
+  }
 }
-.headerWrapper p {
-  font-weight: bold;
+nav a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+nav a:visited,
+nav a:active,
+nav a:focus {
   color: #2c3e50;
 }
-.headerWrapper .sign,
-.headerWrapper .signOut {
+nav a:hover {
+  text-decoration: underline;
+}
+nav .navLogo img {
+  width: 200px;
+  max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  nav .navLogo img {
+    width: 130px;
+  }
+}
+nav .navLogo .sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+  /* 3 */
+}
+nav .navSign {
+  margin-right: 1rem;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #2c3e50;
   display: flex;
   align-items: center;
 }
-.headerWrapper .sign img,
-.headerWrapper .signOut img {
-  width: 18px;
+@media screen and (max-width: 768px) {
+  nav .navSign {
+    margin-right: 0;
+  }
 }
-.headerWrapper .sign a,
-.headerWrapper .signOut a {
-  text-decoration: none;
-  font-weight: 600;
+nav .navSign .faCircleUser {
+  font-size: 1.5em;
+  padding-right: 0.6rem;
+}
+@media screen and (max-width: 768px) {
+  nav .navSign .faCircleUser {
+    font-size: 1.2em;
+  }
+}
+nav .navSign .userName {
+  padding-right: 1.5rem;
+  font-size: 1.1em;
+}
+@media screen and (max-width: 768px) {
+  nav .navSign .userName {
+    padding-right: 0.5rem;
+    font-size: 1em;
+  }
+}
+nav .navSign .userName:hover {
+  text-decoration: underline;
+}
+nav .navSign .faSignOut {
+  font-size: 1.1em;
+  margin-right: 0.5rem;
+}
+@media screen and (max-width: 768px) {
+  nav .navSign .faSignOut {
+    font-size: 0.8em;
+    margin-right: 0.3rem;
+  }
+}
+nav .navSign .faSignOutIcon {
   color: #2c3e50;
-  margin-left: 5px;
-  margin-right: 25px;
+  padding-right: 0.5rem;
 }
-
-@media (max-width: 720px) {
-  .headerWrapper img {
-    width: 65%;
+@media screen and (max-width: 768px) {
+  nav .navSign .faSignOutIcon {
+    padding-right: 0.3rem;
   }
-  .headerWrapper p {
-    width: 30%;
-  }
+}
+nav .navSign .faSignOutIcon:visited,
+nav .navSign .faSignOutIcon:active,
+nav .navSign .faSignOutIcon:focus {
+  color: #2c3e50;
+}
+nav .navSign .faSignOutIcon:hover {
+  text-decoration: underline;
 }
