@@ -2,7 +2,7 @@ import "../user/User.css"
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Account from '../../Components/account/Account'
-//import EditName from "../../Components/editName/EditName"
+import EditName from "../../Components/editName/EditName"
 import { useDispatch, useSelector } from 'react-redux'
 import { setUser } from '../../redux/slice'
 
@@ -63,7 +63,7 @@ const User = () => {
               return response.json()
             })
             .then((data) => {
-              dispatch(setUser(data.body)) // demande à Redusx d'utiliser l'action "setUser" pour mettre à jour l'état global.
+              dispatch(setUser(data.body)) // demande à Redux d'utiliser l'action "setUser" pour mettre à jour l'état global.
               console.log('body :', data.body)
             })
             .catch((error) => {
@@ -74,15 +74,15 @@ const User = () => {
         fetchUserProfile()
       }, [token, dispatch]) // Tableau de dépendance.
     
-      useEffect(() => {
+      /*useEffect(() => {
         if (!isAuthenticated) {
           navigate('/')
         }
-      }, [isAuthenticated, navigate])
+      }, [isAuthenticated, navigate])*/
     
     return (
         <main className='bgDark'>
-      {/*<EditName />*/}
+      <EditName />
       {accountItems.map((accountItem, index) => (
         <Account key={index} accountItem={accountItem} />
       ))}
