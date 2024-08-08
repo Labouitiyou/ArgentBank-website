@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e70c4a83.css",
+    "main.js": "/static/js/main.46330cf8.js",
+    "static/media/bank-tree.jpeg": "/static/media/bank-tree.4d59987c7c62b024b014.jpeg",
+    "static/media/argentBankLogo.png": "/static/media/argentBankLogo.e031a16c76ab9bbbf78a.png",
+    "index.html": "/index.html",
+    "main.e70c4a83.css.map": "/static/css/main.e70c4a83.css.map",
+    "main.46330cf8.js.map": "/static/js/main.46330cf8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e70c4a83.css",
+    "static/js/main.46330cf8.js"
+  ]
+}
