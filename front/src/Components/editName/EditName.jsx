@@ -20,9 +20,9 @@ const EditName = () => {
     }
 
     if (userData && isEditingUser) {
-      setUserName(userData.userName || '')
-      setFirstName(userData.firstName || '')
-      setLastName(userData.lastName || '')
+      setUserName(userData.userName)
+      setFirstName(userData.firstName)
+      setLastName(userData.lastName)
     }
   }, [userData, isEditingUser, token])
 

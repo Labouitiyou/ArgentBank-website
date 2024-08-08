@@ -1,8 +1,8 @@
 import "../user/User.css"
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import Account from '../../Components/account/Account'
 import EditName from "../../Components/editName/EditName"
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUser } from '../../redux/slice'
 
@@ -41,7 +41,7 @@ const User = () => {
           navigate('/')
           return
         }
-        const fetchUserProfile = () => {
+       const fetchUserProfile = () => {
           fetch('http://localhost:3001/api/v1/user/profile', {
             method: 'POST',
             headers: {
@@ -65,7 +65,8 @@ const User = () => {
         }
     
         fetchUserProfile()
-      }, [token, dispatch, navigate]) // Tableau de dépendance.
+      }, [token, dispatch, navigate]) // Tableau de dépendance. 
+      
     
     return (
         <main className='bgDark'>
