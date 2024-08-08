@@ -29,25 +29,18 @@ const User = () => {
         },
       ]
     
-      //Récupération de la valeur du token et de l'authentification, appel de la fonction dispatch pour envoyer des actions au store et de la fonction useNavigate pour rediriger l'utilisateur vers une page.
+      //Récupération de la valeur du token, appel de la fonction dispatch pour envoyer des actions au store et de la fonction useNavigate pour rediriger l'utilisateur vers une page.
+      
       const token = useSelector((state) => state.auth.token)
-      const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
       const dispatch = useDispatch()
       const navigate = useNavigate()
-    
-      // Redirection si l'utilisateur n'est pas authentifié ou si le token est manquant
-      useEffect(() => {
-        if (!isAuthenticated || !token) {
-          navigate('/')
-        }
-      }, [isAuthenticated, token, navigate])
     
       // Récupération des données utilisateurs, appel à l'api lors du rendu initial et à chaque fois que le token ou le dispach change via le tableau de dépendance.
       useEffect(() => {
         if (!token) {
+          navigate('/')
           return
         }
-    
         const fetchUserProfile = () => {
           fetch('http://localhost:3001/api/v1/user/profile', {
             method: 'POST',
@@ -72,13 +65,7 @@ const User = () => {
         }
     
         fetchUserProfile()
-      }, [token, dispatch]) // Tableau de dépendance.
-    
-      /*useEffect(() => {
-        if (!isAuthenticated) {
-          navigate('/')
-        }
-      }, [isAuthenticated, navigate])*/
+      }, [token, dispatch, navigate]) // Tableau de dépendance.
     
     return (
         <main className='bgDark'>

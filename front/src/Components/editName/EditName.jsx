@@ -27,7 +27,7 @@ const EditName = () => {
   }, [userData, isEditingUser, token])
 
   if (!userData) {
-    return <div>Loading...</div>
+    return 
   }
 
   // Soumission du formulaire à l'API via l'envoie d'une requête, si cette dernière est réussie l'état de Redux est mise à jour avec les nouvelles informations utilisateurs.
@@ -98,7 +98,7 @@ const EditName = () => {
               value={firstName}
               disabled={true}
               className='userFormInput'
-              onChange={(event) => setFirstName(event.target.value)}
+          
             />
           </div>
           <div className='userFormWrapper'>
@@ -112,7 +112,6 @@ const EditName = () => {
               value={lastName}
               disabled={true}
               className='userFormInput'
-              onChange={(event) => setLastName(event.target.value)}
             />
           </div>
           <div className='userFormButton'>
