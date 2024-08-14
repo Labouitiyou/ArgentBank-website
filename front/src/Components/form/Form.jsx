@@ -43,7 +43,7 @@ const Form = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Erreur lors de la requête')
+         setLoginMessage(' Erreur lors de la requête!')
         }
         return response.json()
       })

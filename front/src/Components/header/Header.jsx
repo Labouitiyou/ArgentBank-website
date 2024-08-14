@@ -1,7 +1,6 @@
 import "../header/Header.css";
-import logo from '../../Assets/argentBankLogo.png'
-//import User from "../../Assets/user.svg";
-//import SignOut from "../../Assets/sign-out.svg";
+import logo from '../../Assets/argentBankLogo.webp'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faCircleUser,
@@ -12,22 +11,18 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from '../../redux/slice';
 
 const Header =() =>{
-       // Récupération des données utilisateur, du token et stockage des valeurs dans des variables.
-  const userData = useSelector((state) => state.auth.user)
-  
 
+  // Récupération des données utilisateur, du token et stockage des valeurs dans des variables.
+  const userData = useSelector((state) => state.auth.user)
   const token = useSelector((state) => state.auth.token)
 
-  // Initialisation des fonctions useDispatch et useNavigate
-
+  // Initialisation des fonctions useDispatch !
   const dispatch = useDispatch()
 
-  //Fonction de deconnexion
+  //Fonction de déconnexion
   const handleSignOut = () => {
     dispatch(logOut())
   }
-
- 
   return(
    
 <nav>
