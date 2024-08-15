@@ -1,11 +1,10 @@
 import "../user/User.css"
 import Account from '../../Components/account/Account'
 import EditName from "../../Components/editName/EditName"
-import { useEffect } from 'react'
+//import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { setUser } from '../../redux/slice'
-//import { createAsyncThunk } from "@reduxjs/toolkit"
+import { fetchUserProfile } from "../../API/Api"
 
 
 const User = () => {
@@ -34,13 +33,19 @@ const User = () => {
       ]
     
       //Récupération de la valeur du token, appel de la fonction dispatch pour envoyer des actions au store et de la fonction useNavigate pour rediriger l'utilisateur vers une page.
-      
       const token = useSelector((state) => state.auth.token)
       const dispatch = useDispatch()
       const navigate = useNavigate()
+
+      if (!token) {
+        navigate('/')
+        return
+        }
+      dispatch(fetchUserProfile(token));
     
+
       // Récupération des données utilisateurs, appel à l'api lors du rendu initial et à chaque fois que le token ou le dispach change via le tableau de dépendance.
-      useEffect(() => {
+      /*useEffect (() => {
         if (!token) {
           navigate('/')
           return
@@ -67,10 +72,9 @@ const User = () => {
               console.error('Erreur:', error)
             })
         }
-           fetchUserProfile(token)
-      }, [token, dispatch, navigate]) // Tableau de dépendance. 
+        fetchUserProfile();
+      }, [token, dispatch, navigate]) // Tableau de dépendance. */
       
-    
     return (
         <main className='bgDark'>
       <EditName />
