@@ -99,14 +99,14 @@ paths:
           description: Invalid Fields
         "500":
           description: Internal Server Error
-  /transactions/monthly:
+  /transactions/Account:
     get:
       security:
         - Bearer: []
       tags:
         - Transactions
-      summary: View transactions for the current month grouped by account
-      description: API to view all transactions for the current month grouped by account for a given user
+      summary: View accounts
+      description: API to view all accounts
       parameters:
         - in: query
           name: userId
@@ -117,11 +117,38 @@ paths:
         - application/json
       responses:
         "200":
+          description: Accounts retrieved successfully
+          schema:
+            $ref: "#/definitions/AccountsResponse"
+        "400":
+          description: Invalid User ID
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+  /transactions/monthly:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - Transactions
+      summary: View transactions for the current month grouped by account
+      description: API to view all transactions for the current month grouped by account for a given user
+      parameters:
+        - in: query
+          name: accountId
+          type: string
+          required: true
+          description: ID of the account
+      produces:
+        - application/json
+      responses:
+        "200":
           description: Transactions retrieved successfully
           schema:
             $ref: "#/definitions/TransactionsResponse"
         "400":
-          description: Invalid User ID
+          description: Invalid Account ID
         "404":
           description: Not Found
         "500":
@@ -240,7 +267,7 @@ definitions:
     properties:
       userName:
         type: string
-  TransactionsResponse:
+  AccountsResponse:
     type: object
     properties:
       status:
@@ -252,6 +279,25 @@ definitions:
         items:
           type: object
           properties:
+            accountId:
+              type: string
+            accountName:
+              type: string
+            balance:
+              type: number
+              description: The balance of the account
+            description:
+              type: string
+  TransactionsResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      account:
+        type: object
+        properties:
             accountId:
               type: string
             accountName:
