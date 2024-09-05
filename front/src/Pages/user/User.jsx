@@ -46,39 +46,7 @@ const User = () => {
     if (token) {
         dispatch(fetchUserProfile(token));
     } 
-      
-  
-      
-    // Récupération des données utilisateurs, appel à l'api lors du rendu initial et à chaque fois que le token ou le dispach change via le tableau de dépendance.
-      /*useEffect (() => {
-        if (!token) {
-          navigate('/')
-          return
-        }
-       const fetchUserProfile = () => {
-          fetch('http://localhost:3001/api/v1/user/profile', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${token}`,
-            },
-          })
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error('Erreur lors de la requête')
-              }
-              return response.json()
-            })
-            .then((data) => {
-              dispatch(setUser(data.body)) // demande à Redux d'utiliser l'action "setUser" pour mettre à jour l'état global.
-              console.log('body :', data.body)
-            })
-            .catch((error) => {
-              console.error('Erreur:', error)
-            })
-        }
-        fetchUserProfile();
-      }, [token, dispatch, navigate]) // Tableau de dépendance. */
+    
       
   return (
       <main className='bgDark'>
