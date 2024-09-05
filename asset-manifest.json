@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.e70c4a83.css",
-    "main.js": "/static/js/main.46330cf8.js",
-    "static/media/bank-tree.jpeg": "/static/media/bank-tree.4d59987c7c62b024b014.jpeg",
-    "static/media/argentBankLogo.png": "/static/media/argentBankLogo.e031a16c76ab9bbbf78a.png",
+    "main.css": "/static/css/main.9765d1c1.css",
+    "main.js": "/static/js/main.52feafd9.js",
+    "static/media/bank-tree.webp": "/static/media/bank-tree.0434c6cb02137a7e50d3.webp",
+    "static/media/argentBankLogo.webp": "/static/media/argentBankLogo.b03a4b265ed03f48aa2e.webp",
     "index.html": "/index.html",
-    "main.e70c4a83.css.map": "/static/css/main.e70c4a83.css.map",
-    "main.46330cf8.js.map": "/static/js/main.46330cf8.js.map"
+    "main.9765d1c1.css.map": "/static/css/main.9765d1c1.css.map",
+    "main.52feafd9.js.map": "/static/js/main.52feafd9.js.map"
   },
   "entrypoints": [
-    "static/css/main.e70c4a83.css",
-    "static/js/main.46330cf8.js"
+    "static/css/main.9765d1c1.css",
+    "static/js/main.52feafd9.js"
   ]
 }
